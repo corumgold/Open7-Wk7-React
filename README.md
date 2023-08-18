@@ -2,8 +2,9 @@
 
 ## React Day 2
 - What is React State, and why is it a crucial concept in React development? Explain how React State differs from props and provide a simple example scenario that demonstrates the need for state in a component.
+  - React State is a mechanism that allows components to store and manage their own internal data that can change over time. Unlike props, which are passed from parent components, state is local to the component and can be modified using specific methods. React State is necessary for managing dynamic data that affects a component's behavior or appearance. For example, in a form input component, the text entered by the user might be stored in state to keep track of its value as it changes.
 - How do you create and manage state in a functional component using the useState hook? Describe the concept of "Unidirectional Data Flow" in React.  
-- How do you conditionally render using React state?
+  - In functional components, React State can be managed using the useState hook, which provides a way to declare state variables and functions for updating them. The concept of "Unidirectional Data Flow" in React emphasizes that data flows in a single direction, from parent to child components.
 
 ## React Day 1
 

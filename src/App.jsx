@@ -1,7 +1,10 @@
+import { useState } from "react";
 import "./App.css";
 import ListItem from "./components/ListItem";
 
 function App() {
+  const [isTodoListVisible, setIsTodoListVisible] = useState(false);
+
   const data = [
     {
       title: "Have Breakfast",
@@ -22,16 +25,29 @@ function App() {
 
   return (
     <div className="App">
-      <ol>
-        {data.map((itemObj, index) => (
-          <ListItem
-            key={index}
-            title={itemObj.title}
-            description={itemObj.description}
-            time={itemObj.time}
-          />
-        ))}
-      </ol>
+      {!isTodoListVisible ? (
+        <button onClick={() => setIsTodoListVisible(true)}>
+          Show Todo List
+        </button>
+      ) : (
+        <h1>Todo List :-)</h1>
+      )}
+
+      {isTodoListVisible && (
+        <ol>
+          {data.map((itemObj, index) => (
+            <ListItem
+              key={index}
+              title={itemObj.title}
+              description={itemObj.description}
+              time={itemObj.time}
+            />
+          ))}
+          <button onClick={() => setIsTodoListVisible(false)}>
+            Hide Todo List
+          </button>
+        </ol>
+      )}
     </div>
   );
 }
